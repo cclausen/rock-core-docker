@@ -1,0 +1,8 @@
+#!/usr/bin/expect
+set timeout -1
+spawn autoproj update
+expect {
+	-re ".*password for.*" { send "rocker\r"; exp_continue }
+	expect eof
+}
+
